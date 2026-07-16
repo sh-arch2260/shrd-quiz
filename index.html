@@ -9,15 +9,15 @@
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --base:      #FAFBFC;   /* cool near-white bg (was cream) */
-      --ink:       #1A1D21;
-      --primary:   #3E5C76;   /* muted steel blue (was warm/clay) */
-      --secondary: #7A93A8;   /* grayed mid-blue (was blush) */
-      --secondary-light: #9DB2C4; /* lighter blue for text on dark bg */
-      --accent:    #B8C4CE;   /* pale blue-gray (was sage) */
-      --muted:     #6B7280;
+      --base:      #D2DED4;   /* white */
+      --ink:       #141414;   /* near-black */
+      --primary:   #004D4D;   /* deep teal green — SH-RD green */
+      --secondary: #00393A;   /* darker teal */
+      --secondary-light: #A9C2B8; /* muted sage for text on dark bg */
+      --accent:    #D2DED4;   /* pale sage */
+      --muted:     #6B7268;
       --card:      #FFFFFF;
-      --border:    #E2E5E8;
+      --border:    #DCE4DE;
     }
     html, body {
       height: 100%;
@@ -84,14 +84,14 @@
     }
     .btn-primary {
       align-self: stretch;
-      background: var(--ink); color: var(--base);
+      background: var(--ink); color: var(--accent);
       border: none; border-radius: 2px;
       font-family: 'DM Sans', sans-serif;
       font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
       text-transform: uppercase; padding: 17px 40px;
       cursor: pointer; transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:active { background: #3A3530; transform: scale(0.98); }
+    .btn-primary:active { background: #2A2A2A; transform: scale(0.98); }
  
     /* ── QUESTION ── */
     #question { align-items: stretch; }
@@ -113,7 +113,7 @@
     }
     .q-image {
       width: 100%; height: 44vw; max-height: 220px;
-      background: linear-gradient(135deg, #C9D5DE 0%, #6E8CA3 100%);
+      background: linear-gradient(135deg, #D2DED4 0%, #004D4D 100%);
       display: flex; align-items: center; justify-content: center;
       font-size: 62px; flex-shrink: 0; overflow: hidden;
     }
@@ -149,7 +149,7 @@
       font-size: 13px; line-height: 1.4; color: var(--ink);
     }
     .option-btn.selected {
-      border-color: var(--primary); background: #EEF3F6;
+      border-color: var(--primary); background: #EAF0EA;
     }
     .option-btn.selected .opt-label { color: var(--primary); }
     .q-nav {
@@ -167,7 +167,7 @@
     }
     .btn-ghost:active { background: var(--border); }
     .btn-next {
-      flex: 2.5; background: var(--ink); color: var(--base);
+      flex: 2.5; background: var(--ink); color: var(--accent);
       border: none; border-radius: 2px;
       font-family: 'DM Sans', sans-serif;
       font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
@@ -188,9 +188,9 @@
       font-size: clamp(26px, 7.5vw, 40px); font-weight: 700; line-height: 1.1;
       margin-bottom: 8px;
     }
-    .result-header p { font-size: 13px; color: #A9AFB5; line-height: 1.6; }
+    .result-header p { font-size: 13px; color: #9DB5AC; line-height: 1.6; }
     .result-count-bar {
-      background: #1F2A33; color: var(--secondary-light);
+      background: #0D1F1F; color: var(--secondary-light);
       padding: 10px 24px; text-align: center;
       font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -212,7 +212,7 @@
     .product-img {
       width: 80px; height: 80px; min-width: 80px;
       border-radius: 6px; overflow: hidden;
-      background: linear-gradient(135deg, #D3DEE5 0%, #8CA5B8 100%);
+      background: linear-gradient(135deg, #D2DED4 0%, #004D4D 100%);
       display: flex; align-items: center; justify-content: center;
       font-size: 34px;
     }
@@ -241,7 +241,7 @@
       text-transform: uppercase; padding: 9px 16px; cursor: pointer;
       transition: background 0.2s;
     }
-    .btn-buy:active { background: #2F4760; }
+    .btn-buy:active { background: #00393A; }
     .retake-wrap { padding: 0 20px 48px; display: flex; flex-direction: column; gap: 10px; }
     .btn-send {
       width: 100%; background: var(--primary); color: #fff;
@@ -251,7 +251,7 @@
       text-transform: uppercase; padding: 16px; cursor: pointer;
       transition: background 0.2s;
     }
-    .btn-send:active { background: #2F4760; }
+    .btn-send:active { background: #00393A; }
     .btn-retake {
       width: 100%; background: transparent;
       border: 1.5px solid var(--ink); border-radius: 2px;
@@ -602,7 +602,7 @@ function buildFlexBubble(p) {
       type: "box",
       layout: "vertical",
       paddingAll: "0px",
-      backgroundColor: "#FAFBFC",
+      backgroundColor: "#FAF7F2",
       contents: [
         {
           type: "box",
@@ -624,8 +624,8 @@ function buildFlexBubble(p) {
               background: {
                 type: "linearGradient",
                 angle: "0deg",
-                startColor: "#1A1D21cc",
-                endColor: "#1A1D2100"
+                startColor: "#141414cc",
+                endColor: "#14141400"
               },
               width: "100%",
               height: "50%",
@@ -644,7 +644,7 @@ function buildFlexBubble(p) {
                 {
                   type: "text",
                   text: p.name,
-                  color: "#FAFBFC",
+                  color: "#FAF7F2",
                   size: "sm",
                   weight: "bold",
                   wrap: true
@@ -652,7 +652,7 @@ function buildFlexBubble(p) {
                 {
                   type: "text",
                   text: p.price,
-                  color: "#8FA9BE",
+                  color: "#A9C2B8",
                   size: "sm",
                   weight: "bold"
                 }
@@ -663,7 +663,7 @@ function buildFlexBubble(p) {
         {
           type: "box",
           layout: "vertical",
-          backgroundColor: "#FAFBFC",
+          backgroundColor: "#FAF7F2",
           paddingAll: "12px",
           contents: [
             {
@@ -674,7 +674,7 @@ function buildFlexBubble(p) {
                 uri: p.storeUrl
               },
               style: "primary",
-              color: "#3E5C76",
+              color: "#004D4D",
               height: "sm"
             }
           ]
